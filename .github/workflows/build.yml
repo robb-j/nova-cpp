@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: "build"
+name: 'build'
 
 on: [push]
 
@@ -16,4 +16,4 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: run the build
-        run: ./bin/build.sh
+        run: ./bin/build_extension.sh
