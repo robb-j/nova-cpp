@@ -1,0 +1,7 @@
+{
+  "index.ignored_file_patterns" : [
+    "cpp.novaextension\/Scripts\/*.js"
+  ],
+  "workspace.color" : 0,
+  "workspace.name" : "cpp"
+}

@@ -1,0 +1,39 @@
+{
+  "identifier": "robb-j.cpp",
+  "name": "C++",
+  "organization": "robb-j",
+  "description": "C++ syntac highlighting",
+  "version": "0.0.0",
+  "categories": ["completions", "languages", "issues"],
+  "license": "MIT",
+  "repository": "https://github.com/robb-j/nova-cpp",
+  "bugs": "https://github.com/robb-j/nova-cpp/issues",
+
+  "main": "main.dist.js",
+
+  "activationEvents": ["onLanguage:cpp"],
+
+  "entitlements": {
+    "process": false,
+    "requests": false,
+    "filesystem": "readwrite"
+  },
+
+  "commands": {
+    "editor": [],
+    "extensions": [
+      {
+        "command": "robb-j.cpp.restart",
+        "title": "Restart Server"
+      }
+    ]
+  },
+
+  "config": [
+    
+  ],
+
+  "configWorkspace": [
+
+  ]
+}

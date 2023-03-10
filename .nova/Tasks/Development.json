@@ -1,0 +1,13 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "path" : "bin\/build_extension.sh"
+    },
+    "clean" : {
+      "enabled" : true,
+      "script" : "#!\/bin\/sh\nmake clean\nrm -f cpp.novaextension\/Syntaxes\/libtree-sitter-cpp.dylib\nrm -rf src\/tree_sitter src\/node-types.json src\/parser.c"
+    }
+  },
+  "buildBeforeRunning" : true
+}
