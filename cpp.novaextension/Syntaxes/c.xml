@@ -11,6 +11,6 @@
   </detectors>
 
   <tree-sitter language="c">
-    <highlights path="c-highlights.scm" />
+    <highlights path="c/highlights.scm" />
   </tree-sitter>
 </syntax>

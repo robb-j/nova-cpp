@@ -10,8 +10,31 @@
     <extension priority="1.0">cpp,h,hpp,cc,cxx,hxx,C,H,c++,h++</extension>
   </detectors>
 
+  <comments>
+    <single>
+      <expression>//</expression>
+    </single>
+    <multiline>
+      <starts-with>
+        <expression>/*</expression>
+      </starts-with>
+      <ends-with>
+        <expression>*/</expression>
+      </ends-with>
+    </multiline>
+  </comments>
+  
+  <brackets>
+    <pair open="{" close="}" />
+    <pair open="[" close="]" />
+    <pair open="(" close=")" />
+  </brackets>
+  
+  
+  
+
   <tree-sitter>
-    <highlights path="c-highlights.scm" />
-    <highlights path="cpp-highlights.scm" />
+    <highlights path="cpp/highlights.scm" />
+    <highlights path="c/highlights.scm" />
   </tree-sitter>
 </syntax>

@@ -10,3 +10,4 @@ stdin.log
 stdout.log
 debug.log
 .vscode
+parser.o

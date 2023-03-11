@@ -18,7 +18,7 @@ mkdir -p $TMP_BUILD_DIR
 
 pushd $BASEDIR
 
-npx tree-sitter generate grammar.js
+npx tree-sitter generate --no-bindings grammar.js
 
 CFLAGS="${BUILD_FLAGS} -O3" \
 CXXFLAGS="${BUILD_FLAGS} -O3" \
