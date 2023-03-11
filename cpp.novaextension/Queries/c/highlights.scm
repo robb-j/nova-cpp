@@ -53,29 +53,36 @@
 (string_literal) @string
 (system_lib_string) @string
 
-(null) @constant
-(number_literal) @number
-(char_literal) @number
+(null) @value.null
+(number_literal) @value.number
+(char_literal) @value.number
 
 (call_expression
-  function: (identifier) @function)
+  function: (identifier) @identifier.function)
 (call_expression
   function: (field_expression
-    field: (field_identifier) @function))
+    field: (field_identifier) @identifier.function))
 (function_declarator
-  declarator: (identifier) @function)
+  declarator: (identifier) @identifier.function)
 (preproc_function_def
-  name: (identifier) @function.special)
+  name: (identifier) @processing)
 
 (field_identifier) @property
 (statement_identifier) @label
-(type_identifier) @type
-(primitive_type) @type
+(type_identifier) @keyword.construct
+(primitive_type) @keyword.construct
 (sized_type_specifier) @type
 
 ((identifier) @constant
  (#match? @constant "^[A-Z][A-Z\\d_]*$"))
 
-(identifier) @variable
+(identifier) @identifier
 
 (comment) @comment
+
+; === ;
+
+(escape_sequence) @keyword.construct
+
+(parameter_declaration
+  declarator: (identifier)+ @identifier.argument)
