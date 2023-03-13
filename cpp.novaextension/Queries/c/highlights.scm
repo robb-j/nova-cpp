@@ -67,14 +67,14 @@
 (preproc_function_def
   name: (identifier) @processing)
 
-(field_identifier) @property
+(field_identifier) @identifier.property
 (statement_identifier) @label
-(type_identifier) @keyword.construct
+(type_identifier) @identifier.type
 (primitive_type) @keyword.construct
-(sized_type_specifier) @type
+(sized_type_specifier) @identifier.type
 
-((identifier) @constant
- (#match? @constant "^[A-Z][A-Z\\d_]*$"))
+((identifier) @identifier.constant
+ (#match? @identifier.constant "^[A-Z][A-Z\\d_]*$"))
 
 (identifier) @identifier
 
@@ -85,4 +85,7 @@
 (escape_sequence) @keyword.construct
 
 (parameter_declaration
-  declarator: (identifier)+ @identifier.argument)
+  declarator: (identifier) @identifier.argument)
+
+(parameter_declaration
+  declarator: (pointer_declarator) @identifier.argument)
