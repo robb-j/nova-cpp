@@ -2,39 +2,39 @@
 
 (call_expression
   function: (qualified_identifier
-    name: (identifier) @function))
+    name: (identifier) @identifier.function))
 
 (template_function
-  name: (identifier) @function)
+  name: (identifier) @identifier.function)
 
 (template_method
-  name: (field_identifier) @function)
+  name: (field_identifier) @identifier.function)
 
 (template_function
-  name: (identifier) @function)
+  name: (identifier) @identifier.function)
 
 (function_declarator
   declarator: (qualified_identifier
-    name: (identifier) @function))
+    name: (identifier) @identifier.function))
 
 (function_declarator
   declarator: (qualified_identifier
-    name: (identifier) @function))
+    name: (identifier) @identifier.function))
 
 (function_declarator
-  declarator: (field_identifier) @function)
+  declarator: (field_identifier) @identifier.function)
 
 ; Types
 
-((namespace_identifier) @type
- (#match? @type "^[A-Z]"))
+((namespace_identifier) @identifier.type
+ (#match? @identifier.type "^[A-Z]"))
 
-(auto) @type
+(auto) @keyword.construct
 
 ; Constants
 
-(this) @variable.builtin
-(nullptr) @constant
+(this) @keyword.self
+(nullptr) @value.null
 
 ; Keywords
 
@@ -66,3 +66,14 @@
 ; Strings
 
 (raw_string_literal) @string
+
+; ===
+
+; (enum_specifier
+;   name: (identifier) @definition.enum)
+
+(enum_specifier
+  name: (type_identifier) @definition.enum)
+
+(enumerator
+  name: (identifier) @identifier.property)
